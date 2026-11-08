@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AccessBoard responsive dashboard">
+    <title>AccessBoard | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar flex-container">
+        <h2>AccessBoard</h2>
+
+        <nav>
+            <a href="#overview">Overview</a>
+            <a href="#products">Products</a>
+            <a href="#reports">Reports</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button id="theme-toggle" type="button">
+            Toggle Theme
+        </button>
+    </header>
+
+    <main class="container">
+
+        <!-- OVERVIEW SECTION -->
+        <section class="hero" id="overview">
+            <h1>Dashboard Overview</h1>
+            <p>
+                Welcome to your AccessBoard management dashboard.
+                Manage users, monitor activities and view reports.
+            </p>
+        </section>
+
+        <!-- DASHBOARD CARDS -->
+        <section class="dashboard-grid">
+
+            <article class="dashboard-card">
+                <h3>Total Users</h3>
+                <p class="stat-number">1,250</p>
+                <p>Registered users</p>
+            </article>
+
+            <article class="dashboard-card">
+                <h3>Active Users</h3>
+                <p class="stat-number">980</p>
+                <p>Currently active users</p>
+            </article>
+
+            <article class="dashboard-card">
+                <h3>Total Reports</h3>
+                <p class="stat-number">320</p>
+                <p>Reports generated</p>
+            </article>
+
+        </section>
+
+        <!-- PRODUCTS SECTION -->
+        <section class="section" id="products">
+
+            <h2>Product Dashboard</h2>
+
+            <p>Explore products fetched from FakeStore API.</p>
+
+            <!-- CART COUNT -->
+            <h3>Cart Items: <span id="cart-count">0</span></h3>
+
+            <!-- SEARCH -->
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search products..."
+            >
+
+            <!-- CATEGORY FILTER -->
+            <div id="category-tabs"></div>
+
+            <!-- SORT -->
+            <select id="sort-select">
+                <option value="default">Default Sorting</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="name">Name: A to Z</option>
+            </select>
+
+            <!-- LOADING -->
+            <div id="loading" style="display:none;"></div>
+
+            <!-- ERROR MESSAGE -->
+            <p id="error-banner" style="display:none;"></p>
+
+            <!-- PRODUCTS DISPLAY -->
+            <div id="product-list" class="product-grid"></div>
+
+        </section>
+
+        <!-- REPORTS SECTION -->
+        <section class="section" id="reports">
+
+            <h2>Reports</h2>
+
+            <div class="report">
+                <h3>Monthly Report</h3>
+                <p>Monthly user activity and performance overview.</p>
+            </div>
+
+            <div class="report">
+                <h3>System Report</h3>
+                <p>System usage and application statistics.</p>
+            </div>
+
+            <button id="create-report" type="button">
+                Create a report
+            </button>
+
+            <!-- REPORT DIALOG -->
+            <dialog id="report-dialog">
+                <h3>Create a report</h3>
+                <p>This sample modal demonstrates native dialog behavior.</p>
+                <br>
+                <button id="close-dialog" type="button">
+                    Close dialog
+                </button>
+            </dialog>
+
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section" id="contact">
+
+            <h2>Contact Us</h2>
+            <p>Send us your feedback or questions.</p>
+            <br>
+
+            <form class="contact-form" id="contact-form">
+
+                <input type="text" placeholder="Your Name" required>
+
+                <input type="email" placeholder="Your Email" required>
+
+                <textarea rows="4" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+            <p id="form-message" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 AccessBoard. All rights reserved.</p>
+    </footer>
+
+    <!-- JAVASCRIPT CONNECTION -->
+    <script src="script.js"></script>
+    <script type="module" src="app.js"></script>
+
+</body>
+</html>
